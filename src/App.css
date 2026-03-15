@@ -18,7 +18,6 @@ body,
   flex-direction: column;
 }
 
-.appMainLogin {
+.appMain {
   flex: 1;
-  display: grid;
 }

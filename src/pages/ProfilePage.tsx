@@ -1,12 +1,16 @@
 import style from './styles/ProfilePage.module.css'
 import { useMemo, useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import favicon from '../assets/icons/jaewon-favicon.png'
 import SchoolVerificationCard from '../components/profile/SchoolVerificationCard'
 import type { ProfileForm, SchoolForm, SchoolType, VerifiedSchool } from '../types/profile.ts'
 import { createInitialSchoolForm, schoolTypeLabel, schoolTypeOrder } from '../types/profile.ts'
 import { fetchMemberProfile, updateMemberProfile, saveVerifiedSchool, fetchVerifiedSchools } from '../api/profileEdit'
+import { useAuthStore } from '../store/authStore'
 
 function ProfilePage() {
+  const navigate = useNavigate()
+  const clearAuth = useAuthStore((state) => state.clearAuth)
   // 조회 중 표시
   const [loading, setLoading] = useState(true)
   // 프로필 저장 중 표시
@@ -215,7 +219,8 @@ function ProfilePage() {
 
   // 로그아웃 함수
   const handleLogout = () => {
-    setMessage('아직 로그아웃 기능 연결 전입니다.')
+    clearAuth()
+    navigate('/login', { replace: true })
   }
 
   if (loading) {
