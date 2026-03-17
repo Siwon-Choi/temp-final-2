@@ -36,6 +36,8 @@
 
 .rightPanelActive .signInContainer {
   transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rightPanelActive .signUpContainer {
@@ -247,6 +249,8 @@
 
   .rightPanelActive .signInContainer {
     transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
   }
 
   .rightPanelActive .signUpContainer {
