@@ -248,12 +248,13 @@ function LoginPage() {
     >
       {/* SIGN UP */}
       <div className={`${style.formContainer} ${style.signUpContainer}`}>
-        <form onSubmit={handleSignupSubmit}>
-          <h1>Create Account</h1>
+        <form className={style.form} onSubmit={handleSignupSubmit}>
+          <h1 className={style.title}>Create Account</h1>
 
-          <span>or use your email for registration</span>
+          <span className={style.subtitle}>or use your email for registration</span>
 
           <input
+            className={style.input}
             type="text"
             placeholder="Name"
             value={signupForm.name}
@@ -263,6 +264,7 @@ function LoginPage() {
           />
 
           <input
+            className={style.input}
             type="email"
             placeholder="Email"
             value={signupForm.email}
@@ -272,6 +274,7 @@ function LoginPage() {
           />
 
           <input
+            className={style.input}
             type="password"
             placeholder="Password"
             value={signupForm.password}
@@ -281,6 +284,7 @@ function LoginPage() {
           />
 
           <input
+            className={style.input}
             type="text"
             placeholder="Phone"
             value={signupForm.phone}
@@ -290,6 +294,7 @@ function LoginPage() {
           />
 
           <input
+            className={style.input}
             type="text"
             placeholder="Address"
             value={signupForm.address}
@@ -298,18 +303,19 @@ function LoginPage() {
             }
           />
 
-          <button>Sign Up</button>
+          <button className={style.submitButton}>Sign Up</button>
         </form>
       </div>
 
       {/* SIGN IN */}
       <div className={`${style.formContainer} ${style.signInContainer}`}>
-        <form onSubmit={handleLoginSubmit}>
-          <h1>Sign In</h1>
+        <form className={style.form} onSubmit={handleLoginSubmit}>
+          <h1 className={style.title}>Sign In</h1>
 
-          <span>or use your account</span>
+          <span className={style.subtitle}>or use your account</span>
 
           <input
+            className={style.input}
             type="email"
             placeholder="Email"
             value={loginForm.email}
@@ -319,6 +325,7 @@ function LoginPage() {
           />
 
           <input
+            className={style.input}
             type="password"
             placeholder="Password"
             value={loginForm.password}
@@ -327,7 +334,7 @@ function LoginPage() {
             }
           />
 
-          <button>Sign In</button>
+          <button className={style.submitButton}>Sign In</button>
         </form>
       </div>
 
@@ -335,13 +342,14 @@ function LoginPage() {
       <div className={style.overlayContainer}>
         <div className={style.overlay}>
           <div className={`${style.overlayPanel} ${style.overlayLeft}`}>
-            <h1>Welcome Back!</h1>
+            <h1 className={style.overlayTitle}>Welcome Back!</h1>
 
-            <p>
+            <p className={style.overlayText}>
               To keep connected with us please login with your personal info
             </p>
 
             <button
+              type="button"
               className={style.ghost}
               onClick={() => setIsRightPanelActive(false)}
             >
@@ -350,13 +358,14 @@ function LoginPage() {
           </div>
 
           <div className={`${style.overlayPanel} ${style.overlayRight}`}>
-            <h1>Hello, Friend!</h1>
+            <h1 className={style.overlayTitle}>Hello, Friend!</h1>
 
-            <p>
+            <p className={style.overlayText}>
               Enter your personal details and start journey with us
             </p>
 
             <button
+              type="button"
               className={style.ghost}
               onClick={() => setIsRightPanelActive(true)}
             >
