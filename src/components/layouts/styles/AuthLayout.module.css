@@ -2,5 +2,12 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  padding: 20px 20px 28px;
+}
+
+@media (max-width: 860px) {
+  .appMainLogin {
+    padding: 12px 12px 18px;
+  }
 }
